@@ -1,1 +1,2 @@
-Write a README
+This file reads in a CSV of user ratings on movies and sets up methods to rank movies
+and compare users.
