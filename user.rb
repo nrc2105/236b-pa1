@@ -12,10 +12,12 @@ class User
     @id = rating.user_id
   end
 
+  #Adds a new rating
   def add(rating)
     @rating_list[rating.movie_id] = rating
   end
 
+  #Compares the similarity of two users in terms of movies rated
   def similarity(other_user)
     similarity_count = 0
     @rating_list.each_value do |rating|
@@ -27,6 +29,6 @@ class User
   end
 
   def to_s
-    "User #{@id} has rated #{@rating_list.size} movies"
+    "User #{@id}"
   end
 end

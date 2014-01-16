@@ -5,6 +5,7 @@ class Rating
 
   attr_reader :user_id, :movie_id, :rating, :timestamp
 
+  #Initializes the rating with its various attributes
   def initialize(user_id,movie_id,rating,timestamp)
     @user_id = user_id
     @movie_id = movie_id

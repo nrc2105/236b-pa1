@@ -1,4 +1,6 @@
-#Movie class stores all user ratings and calculates popularity
+#Movie class stores all user ratings and calculates popularity.
+#Ratings are added after subtracting 3, meaning the ratings range
+#from -2 to 2
 require_relative 'rating'
 
 class Movie
@@ -6,13 +8,12 @@ class Movie
   attr_reader :popularity
   #initializes the Movie with its first rating
   def initialize(rating)
-   # @rating_list = [rating]
     @id = rating.movie_id
     @popularity = rating.rating.to_i - 3
   end
 
+  #Add the newest rating (-3) to the popularity
   def add(rating)
-   # @rating_list << rating
     @popularity += rating.rating.to_i - 3
   end
   

@@ -17,7 +17,8 @@ class MovieData
     @count = 0
   end
 
-  #Reads in a file separated by tabs and creates a new rating, then calls the appropriate add methods
+  #Reads in a file separated by tabs and creates a new rating, 
+  #then calls the appropriate add methods
   def read_in_movie_data(file_name)
     CSV.foreach(file_name, headers: "user_id\tmovie_id\trating\ttimestamp", col_sep:"\t") do |row|
       temp_rating = Rating.new(row["user_id"],row["movie_id"],row["rating"],row["timestamp"])
@@ -45,6 +46,7 @@ class MovieData
     end
   end
 
+  #If the desired movie is on the list, returns the popularity
   def popularity(id_number)
     if temp_movie = @movie_list[id_number]
       return temp_movie.popularity
@@ -53,31 +55,18 @@ class MovieData
     end
   end
 
+  #Creates and print out a list of movies in order of popularity
   def popularity_list
-    #Create and print out a list of movies in order of popularity
-    sorted_movies = @movie_list.values.sort{|a,b| b.popularity <=> a.popularity}
-    #return sorted_movies.reverse!
-    return sorted_movies
+    @movie_list.values.sort{|a,b| b.popularity <=> a.popularity}
   end
 
+  #Returns an integer representing the similarity between two users
   def similarity(user1, user2)
     return @user_list[user1].similarity(@user_list[user2])
   end
 
+  #Using the similarity function, returns a list of similar users
   def most_similar(u)
-    #returns a list of similar users
     @user_list.values.sort{|a,b| @user_list[u].similarity(b) <=> @user_list[u].similarity(a)}
-    #top_ten = []
-   # for i in 1..10
-    #  top_ten << "#{i}. #{similar_users[i]}"
-   # end
-   # return top_ten
-  end
-
-
-
-  #DEBUG
-  def to_s
-    "This list contains #{@count} ratings, #{@user_list.size} users, and #{@movie_list.size} movies, #{@movie_list["1641"]}"
   end
 end
