@@ -20,8 +20,10 @@ class MovieData
   #Reads in a file separated by tabs and creates a new rating, 
   #then calls the appropriate add methods
   def read_in_movie_data(file_name)
-    CSV.foreach(file_name, headers: "user_id\tmovie_id\trating\ttimestamp", col_sep:"\t") do |row|
-      temp_rating = Rating.new(row["user_id"],row["movie_id"],row["rating"],row["timestamp"])
+    CSV.foreach(file_name, headers: "user_id\tmovie_id\trating\ttimestamp",\
+                col_sep:"\t") do |row|
+      temp_rating = Rating.new(row["user_id"],row["movie_id"],\
+                               row["rating"],row["timestamp"])
       add_movie(temp_rating)
       add_user(temp_rating)
       @count = @count + 1
