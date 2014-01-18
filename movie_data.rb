@@ -1,5 +1,8 @@
+##################################################################
 #The MovieData class reads in the file, and stores it as a list
 #of users and movies
+#Nicholas Cummins
+#ncummins@brandeis.edu
 
 require 'csv'
 require_relative 'rating'

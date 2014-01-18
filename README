@@ -1,2 +1,7 @@
-This file reads in a CSV of user ratings on movies and sets up methods to rank movies
-and compare users.
+This program reads in a CSV of user ratings on movies and sets up methods to 
+rank movies and compare users.  In this configuration, the movie_data_test.rb
+file is used to test the functionality of movie_data.rb, as well as all
+of the classes used by MovieData.  Data files are supplied through the
+first command line argument.  
+
+Any questions can be directed to Nicholas Cummins at ncummins@brandeis.edu

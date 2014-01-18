@@ -1,5 +1,8 @@
+#################################################################
 #The Rating class will store each row of the file and will be used
 #by Movie and User objects to determine popularity, tastes, etc
+# Nicholas Cummins
+# ncummins@brandeis.edu
 
 class Rating
 

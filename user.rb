@@ -1,4 +1,8 @@
+#########################################################################
 #User class stores each of the users moving ratings and determines taste
+# Nicholas Cummins
+# ncummins@brandeis.edu
+
 require_relative 'rating'
 
 class User
